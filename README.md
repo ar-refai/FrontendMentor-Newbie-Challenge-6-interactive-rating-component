@@ -1,2 +1,3 @@
-# FrontendMentor-Newbie-Challenge-6-interactive-rating-component
-Designing a rating card component as Practice Using HTML , CSS and JS.
+# Frontend Mentor - Interactive rating component
+
+![Design preview for the Interactive rating component coding challenge](./design/desktop-preview.jpg)

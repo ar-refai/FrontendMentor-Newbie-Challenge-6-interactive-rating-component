@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+</head>
+
+<body>
+  <main class="container">
+    <!-- Rating state start -->
+
+    <section id="rating" class="card rating-sec">
+      <div class="rate-star">
+        <img src="images/icon-star.svg" alt="rating star" height="60" width="60" />
+      </div>
+      <div class="rate-head">
+        <h1 class="heading">How did we do?</h1>
+      </div>
+      <p>
+        Please let us know how we did with your support request. All feedback
+        is appreciated to help us improve our offering!
+      </p>
+
+      <div class="rate-number">
+        <span onclick="rateCLick(this)">1</span>
+        <span onclick="rateCLick(this)">2</span>
+        <span onclick="rateCLick(this)">3</span>
+        <span onclick="rateCLick(this)">4</span>
+        <span onclick="rateCLick(this)">5</span>
+      </div>
+      <button onclick="subRate()">Submit</button>
+    </section>
+    <!-- Rating state end -->
+
+    <!-- Thank you state start -->
+    <section id="thanking" class="card thank-sec">
+      <div class="thank-img">
+        <img src="images/illustration-thank-you.svg" alt="thank you" />
+      </div>
+      <div class="thank-rate">
+        You selected
+        <!-- Add rating here -->
+        <div id="js-rate" style="display:inline ;"></div>
+        out of 5
+      </div>
+      <div class="thank-head">
+        <h2 class="heading">
+          Thank you!
+        </h2>
+      </div>
+      <p>
+        We appreciate you taking the time to give a rating. If you ever need
+        more support, don’t hesitate to get in touch!
+      </p>
+    </section>
+
+    <!-- Thank you state end -->
+
+    <!-- <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a
+        href="#">Abdelrahman Elrefai</a>.
+    </footer> -->
+  </main>
+  <!-- scripting -->
+  <script>
+    /*rating click function*/
+    function rateCLick(x) {
+      var list = document.getElementsByTagName("span");
+      /*if undefined remove all attributes and activate it*/
+      if (x.classList[0] == undefined) {
+        for (var i = 0; i < list.length; i++)
+          list[i].removeAttribute("class");
+        x.classList.add("active");
+      }
+    }
+
+    /*button clicked function*/
+    function subRate() {
+
+      /*get content of the element with active class*/
+      var rate = document.getElementsByClassName("active")[0].innerHTML;
+      /*put it in the thanking section*/
+      document.getElementById("js-rate").innerHTML = rate;
+      /*display none*/
+      document.getElementById("rating").style.display = "none";
+      /*display block*/
+      document.getElementById("thanking").style.display = "flex";
+    }
+  </script>
+</body>
+
+</html>

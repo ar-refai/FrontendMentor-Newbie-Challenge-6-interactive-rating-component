@@ -1,0 +1,162 @@
+/* General Styling */
+:root {
+    /* primary color */
+    --orange: hsl(25, 97%, 53%);
+    /* secondary colors */
+    --white: hsl(0, 0%, 100%);
+    --lgtGrey: hsl(217, 12%, 63%);
+    --medGrey: hsl(216, 12%, 54%);
+    --drkBlu: hsl(213, 19%, 18%);
+    --vDrkBlu: hsl(216, 12%, 8%);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: myMainFont;
+    src: url(font/Overpass-VariableFont_wght.ttf);
+}
+
+body {
+    background-color: #000;
+    color: var(--white);
+    height: 100vh;
+    font-family: myMainFont,
+        'Lucida Sans',
+        'Lucida Sans Regular',
+        'Lucida Grande',
+        'Lucida Sans Unicode',
+        Geneva,
+        Verdana,
+        sans-serif;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-image: linear-gradient(var(--drkBlu), var(--vDrkBlu));
+    width: 450px;
+    height: 500px;
+    padding: 30px;
+    border-radius: 20px;
+    margin: 80px auto;
+}
+
+/* rating section styling */
+.rate-star,
+.heading {
+    margin: 20px 0;
+}
+
+.rate-star img {
+    padding: 20px;
+    background-color: var(--drkBlu);
+    border-radius: 50%;
+}
+
+.rate-head+p,
+.thank-head+p {
+    line-height: 1.8;
+    color: var(--lgtGrey);
+    margin: 10px 0;
+
+}
+
+.rate-number {
+    margin: 30px 0;
+}
+
+.rate-number {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rate-number span {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: hsla(216, 12%, 54%, 40%);
+    color: var(--medGrey);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .3s ease;
+
+}
+
+.rate-number span.active {
+    background-color: var(--orange);
+    color: var(--white)
+}
+
+
+.rate-number span:hover {
+    background-color: var(--lgtGrey);
+    color: var(--white)
+}
+.rate-number span.active:hover {
+    background-color: var(--orange);
+    color: var(--white)
+}
+.rating-sec button {
+    width: 100%;
+    border-radius: 100px;
+    padding: 15px 0;
+    background-color: var(--orange);
+    color: var(--white);
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.rating-sec button:hover {
+    background-color: var(--white);
+    color: var(--orange);
+}
+
+/* thank section */
+
+.thank-sec {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.thank-sec .thank-rate {
+    width: fit-content;
+    padding: 5px 20px;
+    margin: 20px auto;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--orange);
+    background-color: var(--drkBlu);
+    border-radius: 60px;
+    opacity: .8;
+    letter-spacing: 1px;
+}
+
+/* the footer styling */
+/* .attribution {
+    font-size: 16px;
+    text-align: center;
+    color: var(--white);
+    padding: 40px 20px;
+    background-color: var(--vDrkBlu);
+}
+
+.attribution a {
+    color: var(--orange);
+} */
